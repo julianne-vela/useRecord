@@ -1,0 +1,145 @@
+html,
+body,
+div#root {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  background-color: lavender;
+  border-bottom: 3px solid #ffff00;
+}
+
+.shadow {
+  margin-top: 0;
+  margin-bottom: 40px;
+  text-align: center;
+  font-family: monospace;
+  font-size: 3rem;
+  letter-spacing: 0.15rem;
+  text-transform: uppercase;
+  color: rgb(253, 230, 230);
+  text-shadow: -4px 4px #ef3550, -8px 8px #f48fb1, -12px 12px #9400d3,
+    -16px 16px #4b0082, -20px 20px #0000ff, -24px 24px #00ff00,
+    -28px 28px #ffff00, -32px 32px #ff7f00, -36px 36px #ff0000;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 10px;
+  height: 100vh;
+  background-color: #fffee1;
+}
+
+.details {
+  flex-direction: column;
+  align-items: center;
+  padding: 5px;
+  border: 3px dotted #9400d3;
+}
+
+.subTitle {
+  text-transform: uppercase;
+  padding: 5px;
+  text-align: center;
+  border: 3px solid magenta;
+  border-radius: 10px;
+  line-height: 1.5rem;
+}
+
+.rainbow {
+  background: linear-gradient(
+    90deg,
+    #f00,
+    #ff2b00,
+    #f50,
+    #ff8000,
+    #fa0,
+    #ffd500,
+    #ff0,
+    #d4ff00,
+    #af0,
+    #80ff00,
+    #5f0,
+    #2bff00,
+    #0f0,
+    #00ff2b,
+    #0f5,
+    #00ff80,
+    #0fa,
+    #00ffd5,
+    #0ff,
+    #00d4ff,
+    #0af,
+    #007fff,
+    #05f,
+    #002bff,
+    #00f,
+    #2a00ff,
+    #50f,
+    #7f00ff,
+    #a0f,
+    #d400ff,
+    #f0f,
+    #ff00d4,
+    #f0a,
+    #ff0080,
+    #f05,
+    #ff002b,
+    #f00
+  );
+  color: #0000;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  width: fit-content;
+  height: fit-content;
+  border: 3px dotted #9400d3;
+}
+
+.controls {
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+}
+
+.controls > input {
+  margin: 5px;
+  width: 50%;
+  height: 50px;
+}
+
+.controls > button {
+  padding: 5px;
+  margin: 5px;
+  border-radius: 10px;
+}
+
+section {
+  display: flex;
+  border: 3px solid magenta;
+  border-radius: 10px;
+  width: 20rem;
+  height: 20rem;
+  margin: 10px;
+}
+
+ul,
+ol,
+li {
+  list-style: none;
+}

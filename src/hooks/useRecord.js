@@ -3,7 +3,7 @@ import { useState } from 'react';
 
 export const useRecord = () => {
   // set current value
-  const [currentValue, setCurrentValue] = useState();
+  const [currentValue, setCurrentValue] = useState('#99EDCC');
 
   // create a function to record a new current value
   const recordColorChange = ({ target: { value } }) => {

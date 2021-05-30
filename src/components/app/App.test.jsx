@@ -1,6 +1,12 @@
 /* eslint-disable max-len */
 import React from 'react';
-import { screen, render, cleanup } from '@testing-library/react';
+import {
+  screen,
+  render,
+  cleanup,
+  fireEvent,
+  waitFor,
+} from '@testing-library/react';
 import App from './App';
 
 describe('useRecord unit testing', () => {
@@ -9,5 +15,11 @@ describe('useRecord unit testing', () => {
     render(<App />);
 
     screen.getByText('Colorizer: Add, undo, & redo color choices');
+  });
+
+  it('renders the selected color and updates according to controls activated', () => {
+    render(<App />);
+
+    const input = screen.getByRole('input');
   });
 });
