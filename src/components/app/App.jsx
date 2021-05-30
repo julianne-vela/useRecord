@@ -11,7 +11,7 @@ export default function App() {
         <h1 className={style.shadow}>Colorizer</h1>
       </header>
       <main className={style.main}>
-        <section className={style.details}>
+        <section aria-label="details" className={style.details}>
           <h4 className={style.subTitle}>
             A quick and dirty <br></br>
             <span className={style.rainbow}>color picking trial</span> <br></br>
@@ -31,21 +31,40 @@ export default function App() {
           </details>
         </section>
         <section className={style.container}>
-          <section className={style.controls}>
-            <input
-              aria-label="color-input"
-              type="color"
-              value={currentValue}
-              onChange={recordColorChange}
-            />
+          <section aria-label="controls" className={style.controls}>
+            <label htmlFor="colorPicker">
+              <input
+                id="colorPicker"
+                aria-label="colorPicker"
+                role="color"
+                type="color"
+                value={currentValue}
+                onChange={recordColorChange}
+              />
+            </label>
             <>
-              <button onClick={undo}>Undo</button>
-              <button onClick={redo}>Redo</button>
+              <button aria-label="undo" onClick={undo}>
+                Undo
+              </button>
+              <button aria-label="redo" onClick={redo}>
+                Redo
+              </button>
             </>
           </section>
-          <section
-            style={{ padding: '5px', backgroundColor: `${currentValue}` }}
-          ></section>
+          <section aria-label="viewBox" className={style.viewBox}>
+            <figcaption
+              aria-label="currentColor"
+              style={{ marginBottom: '5px' }}
+              className={style.rainbow}
+            >
+              {currentValue}
+            </figcaption>
+            <figure
+              aria-label="colorSquare"
+              className={style.colorSquare}
+              style={{ backgroundColor: currentValue }}
+            ></figure>
+          </section>
         </section>
       </main>
     </>

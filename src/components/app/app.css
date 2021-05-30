@@ -129,6 +129,20 @@ div#root {
   border-radius: 10px;
 }
 
+.viewBox {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+  font-size: 1.5rem;
+}
+
+.colorSquare {
+  width: 15rem;
+  height: 15rem;
+  margin: 0;
+}
+
 section {
   display: flex;
   border: 3px solid magenta;
