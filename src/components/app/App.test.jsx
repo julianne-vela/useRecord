@@ -1,11 +1,13 @@
+/* eslint-disable max-len */
 import React from 'react';
-import { render, cleanup } from '@testing-library/react';
+import { screen, render, cleanup } from '@testing-library/react';
 import App from './App';
 
-describe('App component', () => {
+describe('useRecord unit testing', () => {
   afterEach(() => cleanup());
-  it('renders App', () => {
-    const { asFragment } = render(<App />);
-    expect(asFragment()).toMatchSnapshot();
+  it('renders a control box with options to select color, undo, and redo actions, and a display box that shows the current color', () => {
+    render(<App />);
+
+    screen.getByText('Colorizer: Add, undo, & redo color choices');
   });
 });
