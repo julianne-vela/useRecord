@@ -1,21 +1,43 @@
 /* eslint-disable max-len */
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
-export const useRecord = () => {
-  // set current value
-  const [currentValue, setCurrentValue] = useState('#99EDCC');
+export const useRecord = (init) => {
+  const [color, setColor] = useState(init);
+  const [colorHistory, setColorHistory] = useState([init]);
+  const [currentIndex, setCurrentIndex] = useState(0);
 
-  // create a function to record a new current value
-  const recordColorChange = ({ target: { value } }) => {
-    setCurrentValue(value);
+  useEffect(() => {
+    setCurrentIndex(colorHistory.indexOf(color));
+  }, [color]);
+
+  const handleAddColor = ({ target: { value } }) => {
+    setColor(value);
+
+    setColorHistory((prevHistory) => [
+      ...prevHistory.slice(0, currentIndex + 1),
+      value,
+      ...prevHistory.slice(currentIndex + 1),
+    ]);
   };
 
-  // create a function that sets the current value to the previous value (aka, undo)
+  const handleColorEdit = ({ target: { name } }) => {
+    const undo = currentIndex - 1;
+    const redo = currentIndex + 1;
 
-  // create a function that sets the current value forward in history (aka, redo)
+    if (name === 'undo') {
+      setColor(colorHistory[undo]);
+      setCurrentIndex(undo);
+    } else {
+      setColor(colorHistory[redo]);
+      setCurrentIndex(redo);
+    }
+  };
 
   return {
-    currentValue,
-    recordColorChange,
+    color,
+    colorHistory,
+    currentIndex,
+    handleAddColor,
+    handleColorEdit,
   };
 };

@@ -3,7 +3,8 @@ import { useRecord } from '../../hooks/useRecord';
 import style from './app.css';
 
 export default function App() {
-  const { currentValue, recordColorChange, undo, redo } = useRecord();
+  const { color, colorHistory, currentIndex, handleAddColor, handleColorEdit } =
+    useRecord('#FFFF00');
 
   return (
     <>
@@ -38,15 +39,25 @@ export default function App() {
                 aria-label="colorPicker"
                 role="color"
                 type="color"
-                value={currentValue}
-                onChange={recordColorChange}
+                value={color}
+                onChange={handleAddColor}
               />
             </label>
             <>
-              <button aria-label="undo" onClick={undo}>
+              <button
+                aria-label="undo"
+                name="undo"
+                onClick={handleColorEdit}
+                disabled={currentIndex === 0}
+              >
                 Undo
               </button>
-              <button aria-label="redo" onClick={redo}>
+              <button
+                aria-label="redo"
+                name="redo"
+                onClick={handleColorEdit}
+                disabled={currentIndex === colorHistory.length - 1}
+              >
                 Redo
               </button>
             </>
@@ -57,12 +68,12 @@ export default function App() {
               style={{ marginBottom: '5px' }}
               className={style.rainbow}
             >
-              {currentValue}
+              {color}
             </figcaption>
             <figure
               aria-label="colorSquare"
               className={style.colorSquare}
-              style={{ backgroundColor: currentValue }}
+              style={{ backgroundColor: color }}
             ></figure>
           </section>
         </section>
