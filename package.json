@@ -3,7 +3,7 @@
     "version": "1.0.0",
     "description": "",
     "main": "dist/index.js",
-    "homepage": "http://julianne-vela.github.io/userecord",
+    "homepage": "https://julianne-vela.github.io/useRecord",
     "jest": {
         "setupFilesAfterEnv": [
             "@testing-library/jest-dom/extend-expect",
