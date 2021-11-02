@@ -1,7 +1,6 @@
 # useRecord
 
-### Planned Behavior:
-
+### Planned Behavior: 
 - [x] select a color (e.g. red), see the square change colors (to red)
 - [x] select another color (e.g. blue), see the square change to the new color (to blue)
 - [x] select another color (e.g. green), see the square change to the new color (to green)
